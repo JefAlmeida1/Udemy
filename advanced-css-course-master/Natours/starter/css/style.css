@@ -6,6 +6,7 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+/* Pontos inportantes, usando :houver junto com o animation: "nome da anição que voce for escolher" 1s ease-out, faz uma animação ao colocar o ponteiro do mouse encima da imagem */
 
 *{
     margin: 0;
@@ -43,6 +44,7 @@ body{
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .heading-primary{
@@ -50,6 +52,7 @@ body{
     text-transform: upprcase;
 
     backface-visibility: hidden;
+    margin-bottom: 60px;
 }
 
 .heading-primary-main{
@@ -109,4 +112,19 @@ body{
         opacity: 1;
         transform: translate(0);
     }
+}
+
+.btn:link,
+.btn:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+}
+.btn:hover{
+    transform: translateY(-3px);
+}
+.btn-white{
+    background-color: #fff;
+    color: #777;
 }
