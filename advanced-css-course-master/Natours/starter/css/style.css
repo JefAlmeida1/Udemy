@@ -48,6 +48,8 @@ body{
 .heading-primary{
     color: #fff;
     text-transform: upprcase;
+
+    backface-visibility: hidden;
 }
 
 .heading-primary-main{
@@ -56,15 +58,25 @@ body{
     font-weight: 700;
     letter-spacing: 35px;
     
-    animation-name: moveInLeft;
-    animation-duration: 5s;
+    animation-name: moveInleft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation-iteration-count: 3; ele repete a quantidade de vezes que voce for determinar, como aqui esta para repetir por 3 vezes*/
+
+    /*animation-delay: 3s; ele atrasa por 3 segundos*/
+
+    
 }
 
 .heading-primary-sub{
     display: block;
     font-size: 20px;
     font-weight: 400;
-    letter-spacing: 17.4px;   
+    letter-spacing: 17.4px; 
+    
+    animation-name: moveInRigth;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
 }
 
 @keyframes moveInleft{
@@ -74,7 +86,23 @@ body{
     }
     
     80%{
+        transform: translate(20px);
+    }      
 
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRigth{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    
+    80%{
+        transform: translate(-10px);
     }      
 
     100%{
