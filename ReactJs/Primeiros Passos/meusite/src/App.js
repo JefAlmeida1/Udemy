@@ -1,15 +1,30 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 
-class App extends Component{
-    render(){
-        return(
-            <div className="timer">
-                <a>0.0</a>
-                <a>Vai</a>
-                <a>Limpar</a>
-            </div>
-        )
+function App (){
+
+    const [tarefas, setTarefas] = useState(['Pagar a conta de luz','Estudar React Hooks'])
+    function handleAdd(){
+        setTarefas([...tarefas, 'Aprender Javascript'])
     }
+    const [input, setInput] = useState('')
+
+    function handleAdd(){
+        setTarefas([...tarefas, input])
+        setInput('')
+    }
+
+    return(
+        <div>
+            
+            <ul>
+                {tarefas.map(tarefa => (
+                    <li key={tarefa} > {tarefa}</li>
+                ))}
+            </ul>
+            <input type="text" value={input} onChange={ e => setInput(e.target.value)}></input>
+            <button type="button" onClick={handleAdd}>Adicionar</button>
+        </div>
+    )
 }
 
 export default App;
