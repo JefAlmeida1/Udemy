@@ -1,0 +1,10 @@
+Atividade 2
+
+Quantos sobrenomes únicos temos em nossa tabela person.person.?
+
+Resolução:
+
+SELECT DISTINCT LastName
+FROM person.person.
+
+Total de linhas: 1206
