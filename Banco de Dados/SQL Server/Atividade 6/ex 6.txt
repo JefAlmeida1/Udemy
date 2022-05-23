@@ -1,0 +1,8 @@
+6. Eu quero saber quantos produtos temos cadastrado em nossa tabela de produtos (prodution.product).
+
+Resultado:
+
+select count(*)
+from Production.Product;
+
+Total: 504

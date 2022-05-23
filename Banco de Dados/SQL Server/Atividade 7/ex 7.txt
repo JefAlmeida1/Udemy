@@ -1,0 +1,8 @@
+7. Quantos tamanhos de produtos temos cadastrado em nossa tabela (prodution.product).
+
+Resultado:
+
+select count(Size)
+from Production.Product;
+
+Total: 211

@@ -1,0 +1,7 @@
+8. Obter o productId dos 10 produtos mais caros cadastrados no sistema, listando mais caro para o mais barato.
+
+Resultado:
+
+select top 10 ProductID
+from Production.Product
+order by ListPrice desc;
