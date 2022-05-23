@@ -1,0 +1,11 @@
+5. Um usuario chamado Peter Krebs esta devendo um pagamento, consiga o e-mail dele para que possa envisar uma cobrança.
+
+Resultado:
+
+select *
+from person.Person
+where FirstName = 'Peter' and LastName = 'Krebs';
+
+select * 
+from person.EmailAddress
+where BusinessEntityID = '26';

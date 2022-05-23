@@ -1,0 +1,6 @@
+4. Foi pedido pelo marketing uma relação de todos os empregados(employees) que são casados( single, married) e são asalariados(salaried).
+
+Resultado:
+select *
+from HumanResources.Employee
+where MaritalStatus = 'M' and SalariedFlag = 1;
