@@ -1,0 +1,15 @@
+14. Quantos produtos vermelhos tem preço entre 500 a 1000 dolares?
+
+Resolução:
+
+Minha solução:
+select * 
+from Production.Product
+where color = 'RED' and ListPrice > 500 and ListPrice <= 1000;
+
+Solução do professor:
+
+select * 
+from Production.Product
+where color = 'RED' 
+and ListPrice between 500 and 1000;

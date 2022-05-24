@@ -1,0 +1,9 @@
+11. Quantas pessoas temos com o sobrenome que inicia com a letra P?
+
+Resolução:
+
+select count(LastName) 
+from Person.Person
+where LastName like 'P%';
+
+Total: 1187

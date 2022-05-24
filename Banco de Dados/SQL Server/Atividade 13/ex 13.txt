@@ -1,0 +1,6 @@
+13. Quais são as cidades unicas que temos cadastrados em nosso sistema?
+
+Resolução: 
+
+select distinct City
+from Person.Address;

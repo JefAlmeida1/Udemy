@@ -1,0 +1,7 @@
+10. Quantos produtos temoas cadastrado no sistema que custam mais que 1500 dolares?
+
+Resolução:
+
+select count(listprice)
+from Production.Product
+where ListPrise > 1500

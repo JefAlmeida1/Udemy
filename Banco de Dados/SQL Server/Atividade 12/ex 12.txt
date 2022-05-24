@@ -1,0 +1,8 @@
+12. Em quantas cidades únicas estão cadastrados nossos clientes?
+
+Resolução:
+
+select count(distinct City)
+from Person.Address;
+
+Total: 575

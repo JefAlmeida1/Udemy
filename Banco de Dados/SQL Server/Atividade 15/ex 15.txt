@@ -1,0 +1,7 @@
+15. Quantos produtos cadastrados tem a palavra 'road' no nome deles?
+
+Resolução: 
+
+select count (*)
+from Production.Product
+where name like '&road%';
