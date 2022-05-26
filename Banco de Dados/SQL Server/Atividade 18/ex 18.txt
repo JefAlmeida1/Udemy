@@ -1,0 +1,8 @@
+18. Eu quero saber quais foram as 10 vendas que no total tiveram os maiores valores de venda (line total) por produtos do maior valor para o menor.
+
+Resposta:
+
+select top 10 LineTotal, sum(LineTotal) as "Vendas"
+from Sales.SalesOrderDetail
+group by LineTotal
+order by sum(LineTotal) desc;

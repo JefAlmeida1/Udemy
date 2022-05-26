@@ -1,0 +1,7 @@
+17. Eu preciso saber em média qual é a quantidade (quantity) que cada produto é vendido na loja.
+
+Resposta:
+
+select ProductID, avg(OrderQty) as "media"
+from Sales.SalesOrderDetail
+group by ProductID;

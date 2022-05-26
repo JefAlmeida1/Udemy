@@ -1,0 +1,7 @@
+16. Quantas pessoas tem o mesmo MiddleName agrupadas por o MiddleName.
+
+Resposta:
+
+select MiddleName, count (*)  as "soma"
+from Person.Person
+group by MiddleName
