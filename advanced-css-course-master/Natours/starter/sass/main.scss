@@ -1,0 +1,207 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utillities";
+
+@import "components/button";
+
+@import "layout/grid";
+@import "layout/header";
+
+@import "pages/home";
+
+/* Pontos inportantes, usando :houver junto com o animation: "nome da anição que voce for escolher" 1s ease-out, faz uma animação ao colocar o ponteiro do mouse encima da imagem */
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 30px;
+
+    box-sizing: border-box;
+}
+
+.header{
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, 
+    $color-primary-light, 
+    $color-primary-dark),
+     url(../img/hero.jpg);
+    background-size: cover;
+    background-position:top;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    &__logo-box{
+        position: absolute;
+        top: 40px;
+        left: 40px;
+    }
+    &__logo{
+        height: 35px;
+    }
+    
+    &__text-box{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+
+
+
+.heading-primary{
+    color: $color-white;
+    text-transform: upprcase;
+
+    backface-visibility: hidden;
+    margin-bottom: 60px;
+
+    &--main{
+        display: block;
+        font-size: 60px;
+        font-weight: 700;
+        letter-spacing: 35px;
+        
+        animation-name: moveInleft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        /* animation-iteration-count: 3; ele repete a quantidade de vezes que voce for determinar, como aqui esta para repetir por 3 vezes*/
+    
+        /*animation-delay: 3s; ele atrasa por 3 segundos*/
+    
+        
+    }
+    
+    &--sub{
+        display: block;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 17.4px; 
+        
+        animation-name: moveInRigth;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+}
+
+
+@keyframes moveInleft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    
+    80%{
+        transform: translate(20px);
+    }      
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRigth{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    
+    80%{
+        transform: translate(-10px);
+    }      
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.btn{
+    &:link,
+    &:visited{
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 15px 40px;
+        display: inline-block;
+        border-radius: 100px;
+        transition: all;
+    }
+    &:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px (#000, .2);
+
+        &::after{
+            transform: scaleX(1.5) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active{
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px (#000, .2);
+    }
+
+    &-white{
+        background-color: $color-white;
+        color: $color-grey-dark;
+        
+        &::after{
+            background-color: $color-white;
+        }
+    }
+
+    &::after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 04s;
+    }
+    
+   
+    
+    
+    &--animated{
+        animation: moveInBottom .5s ease-out .7s;
+        animation-fill-mode: backwards;
+    }
+}
+
